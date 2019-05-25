@@ -64,6 +64,12 @@ form {
   justify-content: center;
 }
 
+.tagline {
+  font-weight: bold;
+  font-style: italic;
+  color: #a0acff;
+}
+
 .weather-temp h1 {
   font-size: 8em;
   position: relative;

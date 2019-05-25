@@ -27,7 +27,7 @@ class App extends React.Component {
     const data = await api_call.json();
     if (city && country) {
       this.setState({
-        tempurature: Math.round(data.main.temp - 273.15) * 1.8 + 32,
+        tempurature: Math.floor((data.main.temp - 273.15) * 1.8 + 32),
         city: data.name,
         country: data.sys.country,
         humidity: data.main.humidity,
