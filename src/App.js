@@ -25,30 +25,44 @@ class App extends React.Component {
       `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}`
     );
     const data = await api_call.json();
-    console.log(data);
-    this.setState({
-      tempurature: data.main.temp,
-      city: data.name,
-      country: data.sys.country,
-      humidity: data.main.humidity,
-      description: data.weather[0].description,
-      error: ""
-    });
+    if (city && country) {
+      this.setState({
+        tempurature: Math.round(data.main.temp - 273.15) * 1.8 + 32,
+        city: data.name,
+        country: data.sys.country,
+        humidity: data.main.humidity,
+        description: data.weather[0].description,
+        error: ""
+      });
+    } else {
+      this.setState({
+        tempurature: undefined,
+        city: undefined,
+        country: undefined,
+        humidity: undefined,
+        description: undefined,
+        error: "Please enter a city and country"
+      });
+    }
   };
 
   render() {
     return (
-      <div>
-        <Titles />
-        <Forms getWeather={this.getWeather} />
-        <Weather
-          tempurature={this.state.tempurature}
-          city={this.state.city}
-          country={this.state.country}
-          humidity={this.state.humidity}
-          description={this.state.description}
-          error={this.state.error}
-        />
+      <div className="outer-container">
+        <div className="widget-container d-f">
+          <div className="sidebar">
+            <Titles />
+            <Forms getWeather={this.getWeather} />
+          </div>
+          <Weather
+            tempurature={this.state.tempurature}
+            city={this.state.city}
+            country={this.state.country}
+            humidity={this.state.humidity}
+            description={this.state.description}
+            error={this.state.error}
+          />
+        </div>
       </div>
     );
   }

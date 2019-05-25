@@ -1,3 +1,116 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.outer-container {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  -webkit-appearance: none;
+  border: none;
+  background-color: rgb(59, 85, 255);
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 4px;
+  padding: 1.4em 0.8em;
+  box-shadow: 0px 6px 9px 0px rgba(59, 85, 255, 0.4);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+input {
+  -webkit-appearance: none;
+  border: 0;
+  border-bottom: 2px solid #3b54ff;
+  font-size: 18px;
+  margin-top: 1em;
+  padding: 0.8em;
+}
+
+.sidebar {
+  max-width: 280px;
+  padding: 3em 5em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 60px;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+.mt-2 {
+  margin-top: 2em;
+}
+
+.d-f {
+  display: flex;
+}
+
+.weather-temp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-temp h1 {
+  font-size: 8em;
+  position: relative;
+}
+
+.degree-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 40px;
+  border: 9px solid #fff;
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: -42px;
+}
+
+.widget-container {
+  border-radius: 10px;
+  width: 100%;
+  height: 100vh;
+}
+
+.widget-controls {
+  max-width: 280px;
+}
+
+.weather-widget-container {
+  flex: 3;
+  background-color: rgb(59, 85, 255);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.weather-widget-container p {
+  margin: 0 10px;
+}
+
 .App {
   text-align: center;
 }
